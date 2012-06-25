@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="template_form.xhtml">
+
+	<ui:define name="titulo">
+		<title>Inserir novo Produto</title>
+	</ui:define>
+
+	<ui:define name="form">
+
+		<h2>Cadastrar novo Produto</h2>
+		
+		<h:form >
+			<h:panelGrid columns="2">
+				<div class="control-group">
+
+					<h:outputLabel class="control-label" value="Nome"></h:outputLabel>
+					<div class="controls">
+						<h:inputText class="input-xlarge"
+							value="#{produtoMB.produto.nome}" required="true"></h:inputText>
+					</div>
+
+					<h:outputLabel class="control-label" value="Descrição"></h:outputLabel>
+					<div class="controls">
+						<h:inputTextarea class="input-xlarge"
+							value="#{produtoMB.produto.descricao}" required="true"></h:inputTextarea>
+					</div>
+					
+					<h:outputLabel class="control-label" value="Categoria"></h:outputLabel>
+					<div class="controls">
+						<h:selectOneMenu id="idcatego" value="#{produtoMB.produto.idcategoria}">
+							<f:selectItem itemLabel="Selecione"></f:selectItem>
+							<f:selectItems value="#{categoriaMB.categorias}" var="categ"
+							itemLabel="#{categ.nome}" itemValue="#{categ.id}"></f:selectItems>
+						</h:selectOneMenu>
+					</div>
+
+					<h:commandButton class="btn btn-primary" value="Inserir"
+						action="#{produtoMB.criarProduto}"></h:commandButton>
+
+				</div>
+			</h:panelGrid>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

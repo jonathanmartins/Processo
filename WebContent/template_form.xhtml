@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<ui:insert name="titulo">
+		<title>Template para formularios</title>
+	</ui:insert>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css"
+		href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72"
+		href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114"
+		href="images/apple-touch-icon-114x114.png" />
+
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+	<script type="text/javascript" charset="utf-8">
+		$('.dropdown-toggle').dropdown();
+	</script>
+</h:head>
+
+<h:body>
+
+	<ui:include src="menu.xhtml"></ui:include>
+
+	<div class="container">
+		<div class="hero-unit">
+
+			<ui:insert name="form">
+
+				<h2>Form</h2>
+
+				<h:form>
+					<h:panelGrid columns="2">
+						<div class="control-group">
+							<h:outputLabel class="control-label" value="Nome"></h:outputLabel>
+							<div class="controls">
+								<h:inputText class="input-xlarge" value="#{categoriaMB.categoria.nome}"
+									required="true"></h:inputText>
+							</div>
+						</div>
+					</h:panelGrid>
+				</h:form>
+
+			</ui:insert>
+
+		</div>
+	</div>
+</h:body>
+</html>

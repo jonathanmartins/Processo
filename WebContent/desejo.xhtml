@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title> Cadastro Desejo </title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Nome:"></h:outputLabel>
+			<h:inputText id="nome" value="#{clienteMB.cliente.nome}" size="50" required="true" requiredMessage="O nome deve ser preenchido!"></h:inputText>
+			<h:message for="nome"></h:message>
+			
+			<h:outputLabel value="Login:"></h:outputLabel>
+			<h:inputText id="login" value="#{clienteMB.cliente.login}" size="50" required="true" requiredMessage="O Login deve ser preenchido!"></h:inputText>
+			<h:message for="login"></h:message>
+			
+			<h:outputLabel value="Password:"></h:outputLabel>
+			<h:inputText id="senha" value="#{clienteMB.cliente.senha}" size="50" required="true" requiredMessage="A Senha deve ser preenchida!"></h:inputText>
+			<h:message for="senha"></h:message>
+			
+			<h:outputLabel value="Endereco:"></h:outputLabel>
+			<h:inputText id="endereco" value="#{clienteMB.cliente.endereco}" size="50" required="true" requiredMessage="O Endereco deve ser preenchido!"></h:inputText>
+			<h:message for="endereco"></h:message>
+			
+			<h:outputLabel value="Telefone:"></h:outputLabel>
+			<h:inputText id="telefone" value="#{clienteMB.cliente.telefone}" size="50"></h:inputText>
+			<h:message for="telefone"></h:message>
+			
+			<h:commandButton id="benviar" value="Enviar" type="submit" action="#{clienteMB.salvarCliente}"></h:commandButton>
+			<h:commandButton id="blimpar" value="Limpar" type="reset"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+	
+	<h:panelGrid>
+		<h:dataTable id="tabelacliente" value="#{clienteMB.listaCliente}" var="res" title="Clientes Cadastrados" border="1" rows="20" >
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nome"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{res.nome}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Endereco"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{res.endereco}"></h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Telefone"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{res.telefone}"></h:outputText>
+			</h:column>
+		</h:dataTable>
+	</h:panelGrid>
+</h:body>
+</html>

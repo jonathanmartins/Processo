@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<ui:insert name="titulo">
+		<title>Template</title>
+	</ui:insert>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css"
+		href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72"
+		href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114"
+		href="images/apple-touch-icon-114x114.png" />
+
+	<script type="text/javascript" charset="utf-8">
+		$('.dropdown-toggle').dropdown();
+	</script>
+</h:head>
+
+<h:body>
+
+	<ui:include src="menu.xhtml"></ui:include>
+
+	<div class="container-fluid" >
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+
+						<ui:insert name="categorias"></ui:insert>
+
+					</ul>
+				</div>
+				<!--/.well -->
+			</div>
+			<!--/span-->
+			<div class="span9">
+				<div class="hero-unit">
+
+					<ui:insert name="conteudo">	
+						<h2>teste</h2>
+						<p>testando:</p>
+					</ui:insert>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- 
+		<ui:include src="footer.xhtml"></ui:include>
+		 -->
+
+	</div>
+	<!--/.fluid-container-->
+
+</h:body>
+</html>
